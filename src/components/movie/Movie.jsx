@@ -33,7 +33,7 @@ class Movie extends Component {
         return (
             <div className="movie-item">
                 <div className="movie-poster">
-                    <Link to={{ pathname: `/moviepage`, state: this.state.detailedMovieObj }}>
+                    <Link to={{ pathname: `/Movies-App/moviepage`, state: this.state.detailedMovieObj }}>
                         <img src={posterPath} alt="" />
                     </Link>
                 </div>

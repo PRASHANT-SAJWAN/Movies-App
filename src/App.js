@@ -21,9 +21,6 @@ class App extends Component {
   async componentDidMount() {
     this.setMovies(this.state.currentMovie);
   }
-  componentDidUpdate() {
-    console.log(this.state.favMovies);
-  }
 
   setMovies = async (newMovieName) => {
     let data = await axios.get(API_URL + "/search/movie", {
@@ -89,7 +86,7 @@ class App extends Component {
           <Header setMovies={this.setMovies} favMovies={this.state.favMovies} removeFavouriteMovie={this.removeFavouriteMovie} />
 
           <Switch>
-            <Route path="/" exact>
+            <Route path="/Movies-App/" exact>
               {this.state.moviesData.length ?
                 <Movies moviesData={this.state.moviesData} setFavouriteMovie={this.setFavouriteMovie} /> :
                 <h1>No movies found</h1>}
@@ -101,8 +98,8 @@ class App extends Component {
                 setPage={this.setPage} />
             </Route>
 
-            <Route path="/fav" exact component={Favourite} />
-            <Route path="/moviepage" exact component={MoviePage} />
+            <Route path="/Movies-App/fav" exact component={Favourite} />
+            <Route path="/Movies-App/moviepage" exact component={MoviePage} />
 
           </Switch>
         </div>
